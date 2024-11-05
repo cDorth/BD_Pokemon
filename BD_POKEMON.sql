@@ -1,9 +1,13 @@
+--CRIAÇÃO DO BANCO
+
 CREATE DATABASE BDpokemon
 GO
 
 USE BDpokemon
 
 GO
+
+--CRIANDO TABELAS 
 
 CREATE TABLE Usuario(
 idUsuario INT PRIMARY KEY,
