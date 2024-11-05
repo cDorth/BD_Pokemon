@@ -203,6 +203,30 @@ SET ROWCOUNT 0
 
 SELECT * from tipo
 GO
+--LOOP QUE RETORNA QUANTIDADE DE REGISTROS NAS TABELAS PRINCIPAIS 
+DECLARE @tabelaAtual INT = 1;
+DECLARE @totalTabelas INT = 3;
+DECLARE @nomeTabela VARCHAR(50);
+DECLARE @quantidade INT;
+
+WHILE @tabelaAtual <= @totalTabelas
+BEGIN
+    SET @nomeTabela = CASE @tabelaAtual
+                      WHEN 1 THEN 'Usuario'
+                      WHEN 2 THEN 'Pokemon'
+                      WHEN 3 THEN 'PokeCenter'
+                      END; 
+
+    DECLARE @sql NVARCHAR(MAX);
+    SET @sql = 'SELECT @quantidade = COUNT(*) FROM ' + @nomeTabela;
+
+    EXEC sp_executesql @sql, N'@quantidade INT OUTPUT', @quantidade OUTPUT;
+
+    PRINT 'A tabela ' + @nomeTabela + ' possui ' + CAST(@quantidade AS VARCHAR) + ' registros.';
+
+    SET @tabelaAtual = @tabelaAtual + 1;
+END
+GO
 --FUNCTION QUE BUSCA UM POKEMON ESPECIFICO 
 
 CREATE FUNCTION ConsultarPokemon (@idPokemon INT)
