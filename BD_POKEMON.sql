@@ -192,7 +192,7 @@ GO
 --LOOP QUE MUDA TIPO DE ACORDO COM O ID(DEMORA PARA CARREGAR)
 
 DECLARE @title VARCHAR(200), @contador INT
-SET @title = 'fogo'
+SET @title = 'Fogo'
 SET @contador = 1
 
 SET ROWCOUNT 1
@@ -202,6 +202,7 @@ BEGIN
 	UPDATE tipo SET tipo = @title WHERE idTipo = 1
 	PRINT 'Itens atualizados: ' + CONVERT(VARCHAR(10), @contador)
 	SET @contador = @contador + 1
+	BREAK
 END
 SET ROWCOUNT 0
 
@@ -285,18 +286,18 @@ AS
 GO
 
 EXEC SP_ADD_POKEMON
-@idPokemon = 6,
-@nome = 'SENAI',
+@idPokemon = 7,
+@nome = 'CHARIZAARDD',
 @genero = 1,
 @nivel = 99999,
 @idUsuario = 1,
 @idPokeCenter = 3
 GO
-
+SELECT * FROM Pokemon
 --DELETE Pokemon
 --WHERE idPokemon = 6
 
-SELECT * FROM Pokemon
+
 GO
 --TRIGGER QUE MOSTRA O POKEMON ADICIONADO
 
