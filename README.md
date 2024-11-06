@@ -45,3 +45,9 @@ Um banco de dados que relaciona os pokemons de um usuarios com as funcionalidade
 <h1>Codigo Window Function</h1>
 <img src="https://github.com/cDorth/BD_Pokemon/blob/main/img/window.png" width="400px"/>
 </div>
+
+<div align="center">
+<h1>Codigo Function</h1>
+<img src="https://github.com/cDorth/BD_Pokemon/blob/main/img/function2.png" width="400px"/>
+</div>
+
